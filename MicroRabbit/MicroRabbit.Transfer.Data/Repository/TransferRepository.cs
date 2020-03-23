@@ -14,6 +14,12 @@ namespace MicroRabbit.Transfer.Data.Repository
             _transferDbContext = transferDbContext;
         }
 
+        public void Add(TransferLog transferLog)
+        {
+            _transferDbContext.TransferLogs.Add(transferLog);
+            _transferDbContext.SaveChanges();
+        }
+
         IEnumerable<TransferLog> ITransferRepository.GetTransferLogs()
         {
             var transferLogs = _transferDbContext.TransferLogs;
