@@ -4,9 +4,7 @@ using MicroRabbit.Banking.Domain.Models;
 using MicroRabbit.Domain.Core.Bus;
 using Microservices.Banking.Application.Dtos;
 using Microservices.Banking.Application.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Microservices.Banking.Application.Services
 {
@@ -20,6 +18,7 @@ namespace Microservices.Banking.Application.Services
             this._accountRepository = accountRepository;
             this._eventBus = eventBus;
         }
+
         public IEnumerable<Account> GetAccounts()
         {
             return _accountRepository.GetAccounts();
