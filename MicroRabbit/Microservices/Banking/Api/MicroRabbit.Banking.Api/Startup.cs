@@ -54,6 +54,10 @@ namespace MicroRabbit.Banking.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHttpsRedirection();
+            }
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -61,8 +65,6 @@ namespace MicroRabbit.Banking.Api
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Banking Microservice V1");
                 c.RoutePrefix = string.Empty;
             });
-
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 

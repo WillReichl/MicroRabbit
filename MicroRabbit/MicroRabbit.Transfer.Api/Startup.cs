@@ -56,6 +56,10 @@ namespace MicroRabbit.Transfer.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHttpsRedirection();
+            }
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -63,8 +67,6 @@ namespace MicroRabbit.Transfer.Api
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Transfer Microservice V1");
                 c.RoutePrefix = string.Empty;
             });
-
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 
